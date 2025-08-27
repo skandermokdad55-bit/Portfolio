@@ -10,8 +10,8 @@ document.getElementsByClassName("olivia_moswa")[0];
 // olivia moswa text end
 
 // designer text
-firstText = "Designer";
-secondText = "Developer";
+firstText = "Ui-Ux designer";
+secondText = "Graphic designer";
 thridText = "Freelancer"
 intervalTime = 600;
 window.load = displayText();
@@ -84,12 +84,33 @@ circular_imgClick[0].addEventListener("click", () => {
 });
 
 // Dark/ Light Mode Toggle
-function myFunction() {
+document.addEventListener("DOMContentLoaded", function () {
     var element = document.body;
-    element.classList.toggle("dark-mode");
-
     var sunIcon = document.getElementById("sunIcon");
     var moonIcon = document.getElementById("moonIcon");
+
+    // Check localStorage for saved mode
+    var savedMode = localStorage.getItem("mode");
+
+    if (savedMode === "dark") {
+        element.classList.add("dark-mode");
+        sunIcon.classList.add("hidden");
+        moonIcon.classList.remove("hidden");
+    } else {
+        // Default = light mode
+        element.classList.remove("dark-mode");
+        moonIcon.classList.add("hidden");
+        sunIcon.classList.remove("hidden");
+        localStorage.setItem("mode", "light");
+    }
+});
+
+function myFunction() {
+    var element = document.body;
+    var sunIcon = document.getElementById("sunIcon");
+    var moonIcon = document.getElementById("moonIcon");
+
+    element.classList.toggle("dark-mode");
 
     if (element.classList.contains("dark-mode")) {
         sunIcon.classList.add("hidden");
@@ -101,6 +122,8 @@ function myFunction() {
         localStorage.setItem("mode", "light");
     }
 }
+
+
 document.addEventListener("DOMContentLoaded", function () {
     const storedMode = localStorage.getItem("mode");
     if (storedMode === "dark") {
