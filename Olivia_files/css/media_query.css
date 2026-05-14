@@ -74,6 +74,12 @@
         top: 40px;
     }
 
+    .language_selector {
+        position: fixed;
+        right: 40px;
+        top: 100px;
+    }
+
     .sidebar {
         width: 78px;
         background: var(--card-background);
@@ -279,6 +285,12 @@
         position: fixed;
         right: 30px;
         top: 30px;
+    }
+
+    .language_selector {
+        position: fixed;
+        right: 30px;
+        top: 90px;
     }
 
     .moswa {
@@ -929,5 +941,11 @@
         position: fixed;
         right: 20px;
         top: 30px;
+    }
+
+    .language_selector {
+        position: fixed;
+        right: 20px;
+        top: 80px;
     }
 }
